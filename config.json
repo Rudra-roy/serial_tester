@@ -1,0 +1,19 @@
+{
+  "serial": {
+    "port": "/dev/ttyS5",
+    "baudrate": 9600,
+    "bytesize": 8,
+    "parity": "N",
+    "stopbits": 1,
+    "timeout": 1.0
+  },
+  "test": {
+    "packet_size": 64,
+    "transmission_rate": 10,
+    "test_duration": 60,
+    "max_retries": 3,
+    "heartbeat_interval": 5
+  },
+  "window_geometry": "0,37,1920,1163",
+  "last_export_path": ""
+}

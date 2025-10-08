@@ -1,0 +1,15 @@
+
+# Core dependencies
+PyQt6>=6.4.0
+pyserial>=3.5
+matplotlib>=3.6.0
+numpy>=1.21.0
+
+# Database (sqlite3 is built into Python - no installation needed)
+
+# Data processing and analysis
+pandas>=1.5.0
+scipy>=1.9.0
+
+# Additional utilities
+python-dateutil>=2.8.0
