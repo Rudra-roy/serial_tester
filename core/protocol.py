@@ -51,13 +51,17 @@ class ProtocolHandler:
     
     def serialize_packet(self, packet: Packet) -> bytes:
         """Serialize packet to bytes"""
+        # Convert timestamp to milliseconds since epoch, but use only the lower 32 bits
+        # This gives us about 49 days of unique timestamps, which is sufficient for testing
+        timestamp_ms = int(packet.timestamp * 1000) & 0xFFFFFFFF
+        
         # Pack header
         header = struct.pack(
             self.HEADER_FORMAT,
             self.MAGIC_BYTE,
             packet.packet_type.value,
             packet.sequence_id,
-            int(packet.timestamp * 1000)  # Convert to milliseconds
+            timestamp_ms
         )
         
         # Add payload size

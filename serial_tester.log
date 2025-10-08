@@ -4,3 +4,24 @@
 2025-09-26 13:51:21,699 - __main__ - INFO - Starting Serial Communication Performance Tester
 2025-09-26 13:51:21,701 - core.database - INFO - Database initialized successfully
 2025-09-26 13:53:29,968 - __main__ - INFO - Application closing normally
+2025-10-08 14:49:27,421 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-08 14:49:27,422 - core.database - INFO - Database initialized successfully
+2025-10-08 15:14:28,367 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 57600 baud
+2025-10-08 15:14:54,540 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-08 15:14:54,546 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:15:30,312 - core.database - INFO - Test session saved with ID: 1
+2025-10-08 15:15:30,313 - gui.main_window - INFO - Test results saved with session ID: 1
+2025-10-08 15:15:30,313 - core.test_engine - INFO - Test stopped
+2025-10-08 15:20:10,678 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-08 15:20:10,679 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:21:19,824 - core.database - INFO - Test session saved with ID: 2
+2025-10-08 15:21:19,824 - gui.main_window - INFO - Test results saved with session ID: 2
+2025-10-08 15:21:19,825 - core.test_engine - INFO - Test stopped
+2025-10-08 15:23:42,080 - core.serial_handler - ERROR - Unexpected error in receive loop: [Errno 5] Input/output error
+2025-10-08 15:34:05,002 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-08 15:34:05,003 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:34:40,519 - core.database - INFO - Test session saved with ID: 3
+2025-10-08 15:34:40,519 - gui.main_window - INFO - Test results saved with session ID: 3
+2025-10-08 15:34:40,520 - core.test_engine - INFO - Test stopped
+2025-10-08 15:37:28,232 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-08 15:37:28,241 - __main__ - INFO - Application closing normally

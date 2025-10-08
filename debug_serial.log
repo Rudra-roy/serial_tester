@@ -1,0 +1,177 @@
+2025-10-08 15:40:32,476 - __main__ - INFO - Attempting to connect to /dev/ttyUSB1
+2025-10-08 15:40:32,478 - __main__ - INFO - Connection status changed: True
+2025-10-08 15:40:32,478 - core.serial_handler - INFO - Connected to /dev/ttyUSB1 at 56700 baud
+2025-10-08 15:40:32,478 - __main__ - INFO - Connection result: True
+2025-10-08 15:40:33,257 - __main__ - DEBUG - Serial stats - Sent: 0, Received: 0
+2025-10-08 15:40:34,257 - __main__ - DEBUG - Serial stats - Sent: 0, Received: 0
+2025-10-08 15:40:34,773 - __main__ - INFO - Starting test...
+2025-10-08 15:40:34,773 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=1, duration=30
+2025-10-08 15:40:34,773 - __main__ - INFO - Test configuration result: True
+2025-10-08 15:40:34,774 - __main__ - INFO - Test started signal received
+2025-10-08 15:40:34,774 - __main__ - INFO - Status message: Test started in transmitter mode
+2025-10-08 15:40:34,774 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:40:34,774 - __main__ - INFO - Test start result: True
+2025-10-08 15:40:34,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=0, size=80
+2025-10-08 15:40:35,257 - __main__ - DEBUG - Metrics update: Sent: 1, Received: 0, Duration: 0.5s
+2025-10-08 15:40:35,257 - __main__ - DEBUG - Serial stats - Sent: 1, Received: 0
+2025-10-08 15:40:35,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=1, size=80
+2025-10-08 15:40:36,258 - __main__ - DEBUG - Metrics update: Sent: 2, Received: 0, Duration: 1.5s
+2025-10-08 15:40:36,258 - __main__ - DEBUG - Serial stats - Sent: 2, Received: 0
+2025-10-08 15:40:36,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=2, size=80
+2025-10-08 15:40:37,258 - __main__ - DEBUG - Metrics update: Sent: 3, Received: 0, Duration: 2.5s
+2025-10-08 15:40:37,258 - __main__ - DEBUG - Serial stats - Sent: 3, Received: 0
+2025-10-08 15:40:37,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=3, size=80
+2025-10-08 15:40:38,258 - __main__ - DEBUG - Metrics update: Sent: 4, Received: 0, Duration: 3.5s
+2025-10-08 15:40:38,258 - __main__ - DEBUG - Serial stats - Sent: 4, Received: 0
+2025-10-08 15:40:38,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=4, size=80
+2025-10-08 15:40:39,258 - __main__ - DEBUG - Metrics update: Sent: 5, Received: 0, Duration: 4.5s
+2025-10-08 15:40:39,258 - __main__ - DEBUG - Serial stats - Sent: 5, Received: 0
+2025-10-08 15:40:39,777 - core.serial_handler - DEBUG - Sent packet: type=3, seq=5, size=16
+2025-10-08 15:40:39,791 - core.serial_handler - DEBUG - Sent packet: type=1, seq=6, size=80
+2025-10-08 15:40:40,257 - __main__ - DEBUG - Metrics update: Sent: 6, Received: 0, Duration: 5.5s
+2025-10-08 15:40:40,258 - __main__ - DEBUG - Serial stats - Sent: 7, Received: 0
+2025-10-08 15:40:40,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=7, size=80
+2025-10-08 15:40:41,257 - __main__ - DEBUG - Metrics update: Sent: 7, Received: 0, Duration: 6.5s
+2025-10-08 15:40:41,257 - __main__ - DEBUG - Serial stats - Sent: 8, Received: 0
+2025-10-08 15:40:41,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=8, size=80
+2025-10-08 15:40:42,258 - __main__ - DEBUG - Metrics update: Sent: 8, Received: 0, Duration: 7.5s
+2025-10-08 15:40:42,258 - __main__ - DEBUG - Serial stats - Sent: 9, Received: 0
+2025-10-08 15:40:42,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=9, size=80
+2025-10-08 15:40:43,257 - __main__ - DEBUG - Metrics update: Sent: 9, Received: 0, Duration: 8.5s
+2025-10-08 15:40:43,257 - __main__ - DEBUG - Serial stats - Sent: 10, Received: 0
+2025-10-08 15:40:43,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=10, size=80
+2025-10-08 15:40:44,257 - __main__ - DEBUG - Metrics update: Sent: 10, Received: 0, Duration: 9.5s
+2025-10-08 15:40:44,257 - __main__ - DEBUG - Serial stats - Sent: 11, Received: 0
+2025-10-08 15:40:44,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=11, size=80
+2025-10-08 15:40:44,793 - core.serial_handler - DEBUG - Sent packet: type=3, seq=12, size=16
+2025-10-08 15:40:45,258 - __main__ - DEBUG - Metrics update: Sent: 11, Received: 0, Duration: 10.5s
+2025-10-08 15:40:45,258 - __main__ - DEBUG - Serial stats - Sent: 13, Received: 0
+2025-10-08 15:40:45,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=13, size=80
+2025-10-08 15:40:46,257 - __main__ - DEBUG - Metrics update: Sent: 12, Received: 0, Duration: 11.5s
+2025-10-08 15:40:46,257 - __main__ - DEBUG - Serial stats - Sent: 14, Received: 0
+2025-10-08 15:40:46,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=14, size=80
+2025-10-08 15:40:47,257 - __main__ - DEBUG - Metrics update: Sent: 13, Received: 0, Duration: 12.5s
+2025-10-08 15:40:47,257 - __main__ - DEBUG - Serial stats - Sent: 15, Received: 0
+2025-10-08 15:40:47,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=15, size=80
+2025-10-08 15:40:48,257 - __main__ - DEBUG - Metrics update: Sent: 14, Received: 0, Duration: 13.5s
+2025-10-08 15:40:48,257 - __main__ - DEBUG - Serial stats - Sent: 16, Received: 0
+2025-10-08 15:40:48,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=16, size=80
+2025-10-08 15:40:49,257 - __main__ - DEBUG - Metrics update: Sent: 15, Received: 0, Duration: 14.5s
+2025-10-08 15:40:49,257 - __main__ - DEBUG - Serial stats - Sent: 17, Received: 0
+2025-10-08 15:40:49,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=17, size=80
+2025-10-08 15:40:49,795 - core.serial_handler - DEBUG - Sent packet: type=3, seq=18, size=16
+2025-10-08 15:40:50,257 - __main__ - DEBUG - Metrics update: Sent: 16, Received: 0, Duration: 15.5s
+2025-10-08 15:40:50,257 - __main__ - DEBUG - Serial stats - Sent: 19, Received: 0
+2025-10-08 15:40:50,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=19, size=80
+2025-10-08 15:40:51,257 - __main__ - DEBUG - Metrics update: Sent: 17, Received: 0, Duration: 16.5s
+2025-10-08 15:40:51,257 - __main__ - DEBUG - Serial stats - Sent: 20, Received: 0
+2025-10-08 15:40:51,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=20, size=80
+2025-10-08 15:40:52,257 - __main__ - DEBUG - Metrics update: Sent: 18, Received: 0, Duration: 17.5s
+2025-10-08 15:40:52,257 - __main__ - DEBUG - Serial stats - Sent: 21, Received: 0
+2025-10-08 15:40:52,788 - core.serial_handler - DEBUG - Sent packet: type=1, seq=21, size=80
+2025-10-08 15:40:53,258 - __main__ - DEBUG - Metrics update: Sent: 19, Received: 0, Duration: 18.5s
+2025-10-08 15:40:53,258 - __main__ - DEBUG - Serial stats - Sent: 22, Received: 0
+2025-10-08 15:40:53,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=22, size=80
+2025-10-08 15:40:54,258 - __main__ - DEBUG - Metrics update: Sent: 20, Received: 0, Duration: 19.5s
+2025-10-08 15:40:54,258 - __main__ - DEBUG - Serial stats - Sent: 23, Received: 0
+2025-10-08 15:40:54,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=23, size=80
+2025-10-08 15:40:54,794 - core.serial_handler - DEBUG - Sent packet: type=3, seq=24, size=16
+2025-10-08 15:40:55,258 - __main__ - DEBUG - Metrics update: Sent: 21, Received: 0, Duration: 20.5s
+2025-10-08 15:40:55,258 - __main__ - DEBUG - Serial stats - Sent: 25, Received: 0
+2025-10-08 15:40:55,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=25, size=80
+2025-10-08 15:40:56,258 - __main__ - DEBUG - Metrics update: Sent: 22, Received: 0, Duration: 21.5s
+2025-10-08 15:40:56,258 - __main__ - DEBUG - Serial stats - Sent: 26, Received: 0
+2025-10-08 15:40:56,790 - core.serial_handler - DEBUG - Sent packet: type=1, seq=26, size=80
+2025-10-08 15:40:57,257 - __main__ - DEBUG - Metrics update: Sent: 23, Received: 0, Duration: 22.5s
+2025-10-08 15:40:57,257 - __main__ - DEBUG - Serial stats - Sent: 27, Received: 0
+2025-10-08 15:40:57,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=27, size=80
+2025-10-08 15:40:58,258 - __main__ - DEBUG - Metrics update: Sent: 24, Received: 0, Duration: 23.5s
+2025-10-08 15:40:58,258 - __main__ - DEBUG - Serial stats - Sent: 28, Received: 0
+2025-10-08 15:40:58,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=28, size=80
+2025-10-08 15:40:59,258 - __main__ - DEBUG - Metrics update: Sent: 25, Received: 0, Duration: 24.5s
+2025-10-08 15:40:59,258 - __main__ - DEBUG - Serial stats - Sent: 29, Received: 0
+2025-10-08 15:40:59,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=29, size=80
+2025-10-08 15:40:59,796 - core.serial_handler - DEBUG - Sent packet: type=3, seq=30, size=16
+2025-10-08 15:41:00,257 - __main__ - DEBUG - Metrics update: Sent: 26, Received: 0, Duration: 25.5s
+2025-10-08 15:41:00,257 - __main__ - DEBUG - Serial stats - Sent: 31, Received: 0
+2025-10-08 15:41:00,790 - core.serial_handler - DEBUG - Sent packet: type=1, seq=31, size=80
+2025-10-08 15:41:01,257 - __main__ - DEBUG - Metrics update: Sent: 27, Received: 0, Duration: 26.5s
+2025-10-08 15:41:01,257 - __main__ - DEBUG - Serial stats - Sent: 32, Received: 0
+2025-10-08 15:41:01,789 - core.serial_handler - DEBUG - Sent packet: type=1, seq=32, size=80
+2025-10-08 15:41:02,258 - __main__ - DEBUG - Metrics update: Sent: 28, Received: 0, Duration: 27.5s
+2025-10-08 15:41:02,258 - __main__ - DEBUG - Serial stats - Sent: 33, Received: 0
+2025-10-08 15:41:02,790 - core.serial_handler - DEBUG - Sent packet: type=1, seq=33, size=80
+2025-10-08 15:41:03,257 - __main__ - DEBUG - Metrics update: Sent: 29, Received: 0, Duration: 28.5s
+2025-10-08 15:41:03,257 - __main__ - DEBUG - Serial stats - Sent: 34, Received: 0
+2025-10-08 15:41:03,791 - core.serial_handler - DEBUG - Sent packet: type=1, seq=34, size=80
+2025-10-08 15:41:04,258 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 29.5s
+2025-10-08 15:41:04,258 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:05,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 30.5s
+2025-10-08 15:41:05,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:06,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 31.5s
+2025-10-08 15:41:06,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:07,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 32.5s
+2025-10-08 15:41:07,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:08,258 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 33.5s
+2025-10-08 15:41:08,258 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:09,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 34.5s
+2025-10-08 15:41:09,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:10,258 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 35.5s
+2025-10-08 15:41:10,258 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:11,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 36.5s
+2025-10-08 15:41:11,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:12,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 37.5s
+2025-10-08 15:41:12,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:13,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 38.5s
+2025-10-08 15:41:13,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:14,258 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 39.5s
+2025-10-08 15:41:14,258 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:15,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 40.5s
+2025-10-08 15:41:15,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:16,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 41.5s
+2025-10-08 15:41:16,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:17,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 42.5s
+2025-10-08 15:41:17,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:18,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 43.5s
+2025-10-08 15:41:18,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:19,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 44.5s
+2025-10-08 15:41:19,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:20,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 45.5s
+2025-10-08 15:41:20,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:21,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 46.5s
+2025-10-08 15:41:21,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:22,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 47.5s
+2025-10-08 15:41:22,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:23,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 48.5s
+2025-10-08 15:41:23,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:24,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 49.5s
+2025-10-08 15:41:24,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:25,256 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 50.5s
+2025-10-08 15:41:25,256 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:26,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 51.5s
+2025-10-08 15:41:26,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:27,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 52.5s
+2025-10-08 15:41:27,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:28,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 53.5s
+2025-10-08 15:41:28,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:29,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 54.5s
+2025-10-08 15:41:29,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:30,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 55.5s
+2025-10-08 15:41:30,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:31,258 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 56.5s
+2025-10-08 15:41:31,258 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:32,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 57.5s
+2025-10-08 15:41:32,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:33,257 - __main__ - DEBUG - Metrics update: Sent: 30, Received: 0, Duration: 58.5s
+2025-10-08 15:41:33,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:33,900 - __main__ - INFO - Stopping test...
+2025-10-08 15:41:33,900 - __main__ - INFO - Test stopped signal received
+2025-10-08 15:41:33,900 - __main__ - INFO - Status message: Test stopped
+2025-10-08 15:41:33,900 - core.test_engine - INFO - Test stopped
+2025-10-08 15:41:34,256 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:35,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:36,256 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:37,258 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:38,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:39,256 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0
+2025-10-08 15:41:40,257 - __main__ - DEBUG - Serial stats - Sent: 35, Received: 0

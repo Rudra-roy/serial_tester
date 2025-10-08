@@ -1,7 +1,7 @@
 {
   "serial": {
     "port": "/dev/ttyS5",
-    "baudrate": 9600,
+    "baudrate": 57600,
     "bytesize": 8,
     "parity": "N",
     "stopbits": 1,
