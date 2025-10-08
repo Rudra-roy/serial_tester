@@ -25,3 +25,34 @@
 2025-10-08 15:34:40,520 - core.test_engine - INFO - Test stopped
 2025-10-08 15:37:28,232 - core.serial_handler - INFO - Disconnected from serial port
 2025-10-08 15:37:28,241 - __main__ - INFO - Application closing normally
+2025-10-08 15:42:18,744 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-08 15:42:18,745 - core.database - INFO - Database initialized successfully
+2025-10-08 15:42:27,612 - core.serial_handler - INFO - Connected to /dev/ttyUSB1 at 57600 baud
+2025-10-08 15:42:32,373 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-08 15:42:32,380 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:47:17,652 - core.database - INFO - Test session saved with ID: 4
+2025-10-08 15:47:17,652 - gui.main_window - INFO - Test results saved with session ID: 4
+2025-10-08 15:47:17,653 - core.test_engine - INFO - Test stopped
+2025-10-08 15:47:25,512 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-08 15:47:25,513 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:54:18,039 - core.database - INFO - Test session saved with ID: 5
+2025-10-08 15:54:18,039 - gui.main_window - INFO - Test results saved with session ID: 5
+2025-10-08 15:54:18,040 - core.test_engine - INFO - Test stopped
+2025-10-08 15:54:18,042 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-08 15:54:18,043 - __main__ - INFO - Application closing normally
+2025-10-08 15:54:20,637 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-08 15:54:20,638 - core.database - INFO - Database initialized successfully
+2025-10-08 15:54:28,735 - core.serial_handler - INFO - Connected to /dev/ttyUSB1 at 57600 baud
+2025-10-08 15:54:36,700 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-08 15:54:36,707 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-08 15:57:40,909 - core.database - INFO - Test session saved with ID: 6
+2025-10-08 15:57:40,909 - gui.main_window - INFO - Test results saved with session ID: 6
+2025-10-08 15:57:40,910 - core.test_engine - INFO - Test stopped
+2025-10-08 15:58:37,875 - core.test_engine - INFO - Test configured: mode=receiver, size=102, rate=5, duration=40
+2025-10-08 15:58:37,876 - core.test_engine - INFO - Test started in receiver mode
+2025-10-08 15:59:20,865 - core.database - INFO - Test session saved with ID: 7
+2025-10-08 15:59:20,866 - gui.main_window - INFO - Test results saved with session ID: 7
+2025-10-08 15:59:20,866 - core.test_engine - INFO - Test stopped
+2025-10-08 16:08:59,378 - core.serial_handler - ERROR - Unexpected error in receive loop: [Errno 5] Input/output error
+2025-10-08 16:25:32,321 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-08 16:25:32,330 - __main__ - INFO - Application closing normally
