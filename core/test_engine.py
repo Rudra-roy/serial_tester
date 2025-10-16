@@ -58,6 +58,7 @@ class TestEngine(QObject):
     test_paused = pyqtSignal()
     test_resumed = pyqtSignal()
     metrics_updated = pyqtSignal(object)  # TestMetrics
+    progress_updated = pyqtSignal(float)  # elapsed_time in seconds
     status_message = pyqtSignal(str)
     
     def __init__(self, serial_handler: SerialHandler):
@@ -193,6 +194,16 @@ class TestEngine(QObject):
             self._transmitter_loop(last_heartbeat, last_bandwidth_calc, bytes_at_last_calc)
         else:
             self._receiver_loop(last_heartbeat, last_bandwidth_calc, bytes_at_last_calc)
+        
+        # Finalize test when loop ends (either by break or stop_event)
+        self.metrics.end_time = time.time()
+        self.is_running = False
+        self.test_stopped.emit()
+        self.status_message.emit("Test completed")
+        self.logger.info(f"Test completed. Duration: {self.metrics.test_duration:.2f}s")
+        
+        # Send final metrics update
+        self.metrics_updated.emit(self.metrics)
     
     def _transmitter_loop(self, last_heartbeat: float, last_bandwidth_calc: float, bytes_at_last_calc: int):
         """Transmitter test loop"""
@@ -201,9 +212,11 @@ class TestEngine(QObject):
         
         while not self.stop_event.is_set():
             current_time = time.time()
+            elapsed_time = current_time - self.metrics.start_time
             
             # Check if test duration exceeded
-            if current_time - self.metrics.start_time >= self.test_duration:
+            if elapsed_time >= self.test_duration:
+                self.logger.info(f"Test duration exceeded: {elapsed_time:.1f}s >= {self.test_duration}s")
                 break
             
             # Handle pause
@@ -248,9 +261,11 @@ class TestEngine(QObject):
         """Receiver test loop"""
         while not self.stop_event.is_set():
             current_time = time.time()
+            elapsed_time = current_time - self.metrics.start_time
             
             # Check if test duration exceeded
-            if current_time - self.metrics.start_time >= self.test_duration:
+            if elapsed_time >= self.test_duration:
+                self.logger.info(f"Test duration exceeded: {elapsed_time:.1f}s >= {self.test_duration}s")
                 break
             
             # Handle pause
@@ -374,7 +389,9 @@ class TestEngine(QObject):
     def _emit_metrics_update(self):
         """Emit metrics update signal"""
         if self.is_running:
+            elapsed_time = time.time() - self.metrics.start_time
             self.metrics_updated.emit(self.metrics)
+            self.progress_updated.emit(elapsed_time)
     
     def get_current_metrics(self) -> TestMetrics:
         """Get current test metrics"""

@@ -168,6 +168,7 @@ class MainWindow(QMainWindow):
         self.test_engine.test_started.connect(self.on_test_started)
         self.test_engine.test_stopped.connect(self.on_test_stopped)
         self.test_engine.metrics_updated.connect(self.metrics_display.update_metrics)
+        self.test_engine.progress_updated.connect(self.test_control_panel.update_progress)
         self.test_engine.status_message.connect(self.status_bar.showMessage)
         
         # Config panel signals
