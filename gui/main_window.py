@@ -167,6 +167,8 @@ class MainWindow(QMainWindow):
         # Test engine signals
         self.test_engine.test_started.connect(self.on_test_started)
         self.test_engine.test_stopped.connect(self.on_test_stopped)
+        self.test_engine.test_paused.connect(self.on_test_paused)
+        self.test_engine.test_resumed.connect(self.on_test_resumed)
         self.test_engine.metrics_updated.connect(self.metrics_display.update_metrics)
         self.test_engine.progress_updated.connect(self.test_control_panel.update_progress)
         self.test_engine.status_message.connect(self.status_bar.showMessage)
@@ -307,6 +309,7 @@ class MainWindow(QMainWindow):
     def on_test_started(self):
         """Handle test started"""
         self.test_control_panel.set_test_running(True)
+        self.metrics_display.clear_metrics()
         self.status_bar.showMessage("Test started")
     
     @pyqtSlot()
@@ -320,6 +323,18 @@ class MainWindow(QMainWindow):
         
         # Refresh history panel
         self.history_panel.refresh_history()
+    
+    @pyqtSlot()
+    def on_test_paused(self):
+        """Handle test paused"""
+        self.test_control_panel.set_test_paused(True)
+        self.status_bar.showMessage("Test paused")
+    
+    @pyqtSlot()
+    def on_test_resumed(self):
+        """Handle test resumed"""
+        self.test_control_panel.set_test_paused(False)
+        self.status_bar.showMessage("Test resumed")
     
     def save_test_results(self):
         """Save current test results to database"""

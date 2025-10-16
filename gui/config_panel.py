@@ -25,6 +25,14 @@ class ConfigPanel(QWidget):
         self.init_ui()
         self.load_current_config()
         
+        # Connect value change signals to save config (AFTER loading to avoid saving during load)
+        self.port_combo.currentTextChanged.connect(self.save_current_config)
+        self.baudrate_combo.currentTextChanged.connect(self.save_current_config)
+        self.bytesize_combo.currentTextChanged.connect(self.save_current_config)
+        self.parity_combo.currentTextChanged.connect(self.save_current_config)
+        self.stopbits_combo.currentTextChanged.connect(self.save_current_config)
+        self.timeout_spin.valueChanged.connect(self.save_current_config)
+        
         # Refresh ports periodically
         self.port_refresh_timer = QTimer()
         self.port_refresh_timer.timeout.connect(self.refresh_ports)
@@ -130,14 +138,6 @@ class ConfigPanel(QWidget):
         
         # Add stretch to push everything to top
         layout.addStretch()
-        
-        # Connect value change signals to save config
-        self.port_combo.currentTextChanged.connect(self.save_current_config)
-        self.baudrate_combo.currentTextChanged.connect(self.save_current_config)
-        self.bytesize_combo.currentTextChanged.connect(self.save_current_config)
-        self.parity_combo.currentTextChanged.connect(self.save_current_config)
-        self.stopbits_combo.currentTextChanged.connect(self.save_current_config)
-        self.timeout_spin.valueChanged.connect(self.save_current_config)
     
     def refresh_ports(self):
         """Refresh available serial ports"""

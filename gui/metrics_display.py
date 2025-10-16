@@ -26,6 +26,7 @@ class MetricsDisplay(QWidget):
         # Data storage for charts
         self.latency_data: List[float] = []
         self.bandwidth_data: List[float] = []
+        self.packet_loss_data: List[float] = []
         self.time_data: List[float] = []
         
         # Chart update timer
@@ -168,7 +169,7 @@ class MetricsDisplay(QWidget):
         self.latency_canvas = FigureCanvas(self.latency_figure)
         self.latency_ax = self.latency_figure.add_subplot(111)
         self.latency_ax.set_title('Latency Over Time')
-        self.latency_ax.set_xlabel('Time (s)')
+        self.latency_ax.set_xlabel('Sample')
         self.latency_ax.set_ylabel('Latency (ms)')
         self.latency_ax.grid(True)
         
@@ -176,12 +177,21 @@ class MetricsDisplay(QWidget):
         self.bandwidth_canvas = FigureCanvas(self.bandwidth_figure)
         self.bandwidth_ax = self.bandwidth_figure.add_subplot(111)
         self.bandwidth_ax.set_title('Bandwidth Over Time')
-        self.bandwidth_ax.set_xlabel('Time (s)')
+        self.bandwidth_ax.set_xlabel('Sample')
         self.bandwidth_ax.set_ylabel('Bandwidth (B/s)')
         self.bandwidth_ax.grid(True)
         
+        self.packet_loss_figure = Figure(figsize=(10, 4))
+        self.packet_loss_canvas = FigureCanvas(self.packet_loss_figure)
+        self.packet_loss_ax = self.packet_loss_figure.add_subplot(111)
+        self.packet_loss_ax.set_title('Packet Loss Rate Over Time')
+        self.packet_loss_ax.set_xlabel('Sample')
+        self.packet_loss_ax.set_ylabel('Loss Rate (%)')
+        self.packet_loss_ax.grid(True)
+        
         charts_layout.addWidget(self.latency_canvas)
         charts_layout.addWidget(self.bandwidth_canvas)
+        charts_layout.addWidget(self.packet_loss_canvas)
         
         self.tab_widget.addTab(charts_widget, "Charts")
     
@@ -208,6 +218,8 @@ class MetricsDisplay(QWidget):
             self.latency_data = metrics.latency_samples.copy()
         if metrics.bandwidth_samples:
             self.bandwidth_data = metrics.bandwidth_samples.copy()
+        if metrics.packet_loss_samples:
+            self.packet_loss_data = metrics.packet_loss_samples.copy()
     
     def update_statistics_display(self, metrics: TestMetrics):
         """Update statistics labels"""
@@ -256,7 +268,6 @@ class MetricsDisplay(QWidget):
     def update_raw_data_display(self, metrics: TestMetrics):
         """Update raw data text display"""
         text = f"=== Test Metrics ===\n"
-        text += f"Start Time: {metrics.start_time}\n"
         text += f"Test Duration: {metrics.test_duration:.2f} s\n"
         text += f"Packets Sent: {metrics.packets_sent}\n"
         text += f"Packets Received: {metrics.packets_received}\n"
@@ -288,7 +299,7 @@ class MetricsDisplay(QWidget):
     
     def update_charts(self):
         """Update matplotlib charts"""
-        if not self.latency_data and not self.bandwidth_data:
+        if not self.latency_data and not self.bandwidth_data and not self.packet_loss_data:
             return
         
         # Update latency chart
@@ -315,12 +326,26 @@ class MetricsDisplay(QWidget):
             self.bandwidth_ax.plot(self.bandwidth_data, 'g-', linewidth=1)
             self.bandwidth_figure.tight_layout()
             self.bandwidth_canvas.draw()
+        
+        # Update packet loss chart
+        if self.packet_loss_data:
+            self.packet_loss_ax.clear()
+            self.packet_loss_ax.set_title('Packet Loss Rate Over Time')
+            self.packet_loss_ax.set_xlabel('Sample')
+            self.packet_loss_ax.set_ylabel('Loss Rate (%)')
+            self.packet_loss_ax.grid(True)
+            
+            self.packet_loss_ax.plot(self.packet_loss_data, 'r-', linewidth=1)
+            self.packet_loss_ax.set_ylim(bottom=0)  # Ensure Y-axis starts at 0
+            self.packet_loss_figure.tight_layout()
+            self.packet_loss_canvas.draw()
     
     def reset_display(self):
         """Reset all displays for new test"""
         # Clear data
         self.latency_data.clear()
         self.bandwidth_data.clear()
+        self.packet_loss_data.clear()
         self.time_data.clear()
         
         # Reset labels
@@ -357,6 +382,36 @@ class MetricsDisplay(QWidget):
         self.bandwidth_ax.set_ylabel('Bandwidth (B/s)')
         self.bandwidth_ax.grid(True)
         self.bandwidth_canvas.draw()
+        
+        # Clear raw data
+        self.raw_data_text.clear()
+    
+    def clear_metrics(self):
+        """Clear all metrics displays for new test"""
+        # Clear data
+        self.latency_data.clear()
+        self.bandwidth_data.clear()
+        self.time_data.clear()
+        
+        # Reset labels
+        self.packets_sent_label.setText("0")
+        self.packets_received_label.setText("0")
+        self.packets_lost_label.setText("0")
+        self.bytes_transmitted_label.setText("0 B")
+        self.test_duration_label.setText("0.0 s")
+        
+        self.avg_latency_label.setText("0.0 ms")
+        self.min_latency_label.setText("0.0 ms")
+        self.max_latency_label.setText("0.0 ms")
+        self.jitter_label.setText("0.0 ms")
+        
+        self.avg_bandwidth_label.setText("0 B/s")
+        self.peak_bandwidth_label.setText("0 B/s")
+        self.current_bandwidth_label.setText("0 B/s")
+        
+        self.packet_loss_label.setText("0.00%")
+        self.error_count_label.setText("0")
+        self.efficiency_label.setText("0.00%")
         
         # Clear raw data
         self.raw_data_text.clear()

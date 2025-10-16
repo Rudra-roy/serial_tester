@@ -49,6 +49,7 @@ class TestControlPanel(QWidget):
         self.mode_combo.setMinimumWidth(150)
         self.mode_combo.addItem("Transmitter", "transmitter")
         self.mode_combo.addItem("Receiver", "receiver")
+        self.mode_combo.currentIndexChanged.connect(self.on_mode_changed)
         config_layout.addWidget(mode_label, row, 0, Qt.AlignmentFlag.AlignRight)
         config_layout.addWidget(self.mode_combo, row, 1)
         row += 1
@@ -97,6 +98,10 @@ class TestControlPanel(QWidget):
         # Set column stretch: labels don't expand, controls expand to fill available space
         config_layout.setColumnStretch(0, 0)  # Labels stay fixed width
         config_layout.setColumnStretch(1, 1)  # Controls expand
+        
+        # Store references for graying out
+        self.packet_label = packet_label
+        self.rate_label = rate_label
         
         layout.addWidget(config_group)
         
@@ -163,6 +168,22 @@ class TestControlPanel(QWidget):
             self.resume_test.emit()
         else:
             self.pause_test.emit()
+    
+    def on_mode_changed(self):
+        """Handle test mode change - gray out packet size and rate for receiver mode"""
+        is_receiver = self.mode_combo.currentData() == "receiver"
+        
+        # Gray out packet size and rate controls in receiver mode
+        self.packet_size_spin.setEnabled(not is_receiver)
+        self.rate_spin.setEnabled(not is_receiver)
+        
+        # Also gray out labels for visual clarity
+        if is_receiver:
+            self.packet_label.setStyleSheet("color: gray;")
+            self.rate_label.setStyleSheet("color: gray;")
+        else:
+            self.packet_label.setStyleSheet("")
+            self.rate_label.setStyleSheet("")
     
     def get_test_config(self) -> Dict[str, Any]:
         """Get current test configuration"""

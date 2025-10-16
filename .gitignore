@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.manifest
+*.spec
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+test_env/
+testpypi_env/
+final_test/
+
+# PyInstaller
+*.spec
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Project specific
+serial_tester.db
+serial_tester.log
+debug_serial.log
+*.log
+
+# Config files with sensitive data
+config.json
+.pypirc
+.env
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Build artifacts
+*.whl
+*.tar.gz
+
+# Screenshots (keep directory structure but ignore large images during development)
+# Remove this line when ready to add screenshots
+# screenshots/*.png
+# screenshots/*.jpg

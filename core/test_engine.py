@@ -29,7 +29,9 @@ class TestMetrics:
     bytes_transmitted: int
     latency_samples: List[float]
     bandwidth_samples: List[float]
+    packet_loss_samples: List[float]  # Packet loss rate over time (%)
     errors: List[str]
+    active_time: float = 0.0  # Track active (non-paused) time for bandwidth accuracy
     
     @property
     def test_duration(self) -> float:
@@ -51,6 +53,11 @@ class TestMetrics:
 
 class TestEngine(QObject):
     """Performance test engine"""
+    
+    # Protocol overhead constants
+    PACKET_HEADER_SIZE = 14  # Magic(1) + Type(1) + Seq(2) + Timestamp(4) + Payload_size(4) + padding(2)
+    PACKET_CRC_SIZE = 4  # CRC32 checksum
+    PACKET_OVERHEAD = PACKET_HEADER_SIZE + PACKET_CRC_SIZE  # 18 bytes total overhead per packet
     
     # Signals
     test_started = pyqtSignal()
@@ -90,16 +97,19 @@ class TestEngine(QObject):
             bytes_transmitted=0,
             latency_samples=[],
             bandwidth_samples=[],
+            packet_loss_samples=[],
             errors=[]
         )
         
         # Transmitter state
         self.pending_acks: Dict[int, float] = {}  # seq_id -> timestamp
         self.expected_sequences: List[int] = []
+        self.packets_sent_in_window: int = 0  # For bandwidth overhead calculation
         
         # Receiver state
         self.received_sequences: set = set()
         self.last_sequence = -1
+        self.packets_received_in_window: int = 0  # For bandwidth overhead calculation
         
         # Connect to serial handler signals
         self.serial_handler.packet_received.connect(self._handle_received_packet)
@@ -238,19 +248,29 @@ class TestEngine(QObject):
                 if self.serial_handler.send_packet(packet):
                     self.metrics.packets_sent += 1
                     self.metrics.bytes_transmitted += len(test_data)
+                    self.packets_sent_in_window += 1  # Track for overhead calculation
                     self.pending_acks[packet.sequence_id] = current_time
                     self.expected_sequences.append(packet.sequence_id)
                 
                 next_packet_time += packet_interval
             
-            # Calculate bandwidth periodically
+            # Calculate bandwidth periodically (with protocol overhead)
             if current_time - last_bandwidth_calc >= 1.0:
                 bytes_diff = self.metrics.bytes_transmitted - bytes_at_last_calc
-                bandwidth = bytes_diff / (current_time - last_bandwidth_calc)
+                # Add protocol overhead: each DATA packet has header + CRC
+                overhead_bytes = self.packets_sent_in_window * self.PACKET_OVERHEAD
+                total_bytes = bytes_diff + overhead_bytes
+                bandwidth = total_bytes / (current_time - last_bandwidth_calc)
                 self.metrics.bandwidth_samples.append(bandwidth)
+                
+                # Calculate packet loss rate
+                if self.metrics.packets_sent > 0:
+                    loss_rate = (self.metrics.packets_lost / self.metrics.packets_sent) * 100
+                    self.metrics.packet_loss_samples.append(loss_rate)
                 
                 last_bandwidth_calc = current_time
                 bytes_at_last_calc = self.metrics.bytes_transmitted
+                self.packets_sent_in_window = 0  # Reset counter
             
             # Check for timeouts
             self._check_ack_timeouts(current_time)
@@ -278,15 +298,26 @@ class TestEngine(QObject):
                 self.serial_handler.send_packet(heartbeat)
                 last_heartbeat = current_time
             
-            # Calculate bandwidth periodically
+            # Calculate bandwidth periodically (with protocol overhead)
             if current_time - last_bandwidth_calc >= 1.0:
                 bytes_diff = self.metrics.bytes_transmitted - bytes_at_last_calc
-                bandwidth = bytes_diff / (current_time - last_bandwidth_calc)
-                if bandwidth > 0:
+                # Add protocol overhead: each DATA packet received has header + CRC
+                # Each ACK sent also has overhead
+                overhead_bytes = (self.packets_received_in_window * self.PACKET_OVERHEAD) + \
+                                (self.packets_received_in_window * self.PACKET_OVERHEAD)  # ACKs sent back
+                total_bytes = bytes_diff + overhead_bytes
+                if total_bytes > 0:
+                    bandwidth = total_bytes / (current_time - last_bandwidth_calc)
                     self.metrics.bandwidth_samples.append(bandwidth)
+                
+                # Calculate packet loss rate
+                if self.metrics.packets_sent > 0:
+                    loss_rate = (self.metrics.packets_lost / self.metrics.packets_sent) * 100
+                    self.metrics.packet_loss_samples.append(loss_rate)
                 
                 last_bandwidth_calc = current_time
                 bytes_at_last_calc = self.metrics.bytes_transmitted
+                self.packets_received_in_window = 0  # Reset counter
             
             time.sleep(0.1)  # Receiver mostly waits for packets
     
@@ -321,6 +352,7 @@ class TestEngine(QObject):
         """Handle DATA packet in receiver mode"""
         self.metrics.packets_received += 1
         self.metrics.bytes_transmitted += len(packet.payload)
+        self.packets_received_in_window += 1  # Track for overhead calculation
         self.received_sequences.add(packet.sequence_id)
         
         # Check for packet loss (gaps in sequence)
@@ -336,10 +368,8 @@ class TestEngine(QObject):
         ack_packet = self.serial_handler.protocol.create_ack_packet(packet.sequence_id)
         self.serial_handler.send_packet(ack_packet)
         
-        # Calculate latency (round-trip from packet timestamp to now)
-        latency = current_time - packet.timestamp
-        if latency > 0:  # Sanity check
-            self.metrics.latency_samples.append(latency)
+        # NOTE: Latency is measured only in transmitter mode (round-trip via ACK)
+        # Receiver mode should not measure latency to avoid mixing one-way and round-trip measurements
     
     def _handle_ack_packet_transmitter(self, packet: Packet, current_time: float):
         """Handle ACK packet in transmitter mode"""
@@ -355,7 +385,7 @@ class TestEngine(QObject):
             del self.pending_acks[acked_seq]
             self.metrics.packets_received += 1
     
-    def _check_ack_timeouts(self, current_time: float, timeout: float = 5.0):
+    def _check_ack_timeouts(self, current_time: float, timeout: float = 3.0):
         """Check for ACK timeouts and mark packets as lost"""
         timed_out = []
         for seq_id, send_time in self.pending_acks.items():
@@ -378,13 +408,17 @@ class TestEngine(QObject):
             bytes_transmitted=0,
             latency_samples=[],
             bandwidth_samples=[],
-            errors=[]
+            packet_loss_samples=[],
+            errors=[],
+            active_time=0.0
         )
         
         self.pending_acks.clear()
         self.expected_sequences.clear()
         self.received_sequences.clear()
         self.last_sequence = -1
+        self.packets_sent_in_window = 0
+        self.packets_received_in_window = 0
     
     def _emit_metrics_update(self):
         """Emit metrics update signal"""
