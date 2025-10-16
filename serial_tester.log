@@ -85,3 +85,159 @@
 2025-10-16 18:31:05,632 - core.test_engine - INFO - Test completed. Duration: 3.00s
 2025-10-16 18:31:05,665 - core.database - INFO - Test session saved with ID: 11
 2025-10-16 18:31:05,666 - gui.main_window - INFO - Test results saved with session ID: 11
+2025-10-16 18:33:38,320 - core.test_engine - INFO - Test configured: mode=transmitter, size=100, rate=1, duration=30
+2025-10-16 18:33:38,341 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 18:34:08,322 - core.test_engine - INFO - Test duration exceeded: 30.0s >= 30s
+2025-10-16 18:34:08,322 - core.test_engine - INFO - Test completed. Duration: 30.00s
+2025-10-16 18:34:08,345 - core.database - INFO - Test session saved with ID: 12
+2025-10-16 18:34:08,346 - gui.main_window - INFO - Test results saved with session ID: 12
+2025-10-16 18:35:24,627 - core.test_engine - INFO - Test configured: mode=transmitter, size=100, rate=1, duration=30
+2025-10-16 18:35:24,647 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 18:35:54,629 - core.test_engine - INFO - Test duration exceeded: 30.0s >= 30s
+2025-10-16 18:35:54,630 - core.test_engine - INFO - Test completed. Duration: 30.00s
+2025-10-16 18:35:54,672 - core.database - INFO - Test session saved with ID: 13
+2025-10-16 18:35:54,673 - gui.main_window - INFO - Test results saved with session ID: 13
+2025-10-16 18:36:30,206 - core.test_engine - INFO - Test configured: mode=transmitter, size=100, rate=1, duration=30
+2025-10-16 18:36:30,223 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 18:36:45,531 - core.test_engine - INFO - Test completed. Duration: 15.32s
+2025-10-16 18:36:45,560 - core.database - INFO - Test session saved with ID: 14
+2025-10-16 18:36:45,561 - gui.main_window - INFO - Test results saved with session ID: 14
+2025-10-16 18:36:45,563 - core.test_engine - INFO - Test stopped
+2025-10-16 18:36:45,585 - core.database - INFO - Test session saved with ID: 15
+2025-10-16 18:36:45,585 - gui.main_window - INFO - Test results saved with session ID: 15
+2025-10-16 18:37:01,209 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-16 18:37:03,636 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 57600 baud
+2025-10-16 18:37:41,663 - core.test_engine - INFO - Test configured: mode=transmitter, size=100, rate=1, duration=30
+2025-10-16 18:37:41,680 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 18:38:00,399 - core.test_engine - INFO - Test completed. Duration: 18.74s
+2025-10-16 18:38:00,432 - core.database - INFO - Test session saved with ID: 16
+2025-10-16 18:38:00,433 - gui.main_window - INFO - Test results saved with session ID: 16
+2025-10-16 18:38:00,438 - core.test_engine - INFO - Test stopped
+2025-10-16 18:38:00,450 - core.database - INFO - Test session saved with ID: 17
+2025-10-16 18:38:00,450 - gui.main_window - INFO - Test results saved with session ID: 17
+2025-10-16 18:38:03,214 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-16 18:38:03,225 - __main__ - INFO - Application closing normally
+2025-10-16 18:57:46,254 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-16 18:57:46,256 - core.database - INFO - Database initialized successfully
+2025-10-16 18:58:09,805 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-16 18:58:28,120 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-16 18:58:28,143 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 18:59:28,121 - core.test_engine - INFO - Test duration exceeded: 60.0s >= 60s
+2025-10-16 18:59:28,121 - core.test_engine - INFO - Test completed. Duration: 60.00s
+2025-10-16 18:59:28,161 - core.database - INFO - Test session saved with ID: 18
+2025-10-16 18:59:28,162 - gui.main_window - INFO - Test results saved with session ID: 18
+2025-10-16 19:01:35,020 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-16 19:01:35,047 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 19:02:35,022 - core.test_engine - INFO - Test duration exceeded: 60.0s >= 60s
+2025-10-16 19:02:35,023 - core.test_engine - INFO - Test completed. Duration: 60.00s
+2025-10-16 19:02:35,057 - core.database - INFO - Test session saved with ID: 19
+2025-10-16 19:02:35,058 - gui.main_window - INFO - Test results saved with session ID: 19
+2025-10-16 19:08:53,726 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-16 19:08:53,737 - __main__ - INFO - Application closing normally
+2025-10-16 19:08:58,344 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-16 19:08:58,347 - core.database - INFO - Database initialized successfully
+2025-10-16 19:09:09,736 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-16 19:09:16,563 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-16 19:09:16,583 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 19:10:16,565 - core.test_engine - INFO - Test duration exceeded: 60.0s >= 60s
+2025-10-16 19:10:16,576 - core.test_engine - INFO - Test completed. Duration: 60.00s
+2025-10-16 19:10:16,669 - core.database - INFO - Test session saved with ID: 20
+2025-10-16 19:10:16,669 - gui.main_window - INFO - Test results saved with session ID: 20
+2025-10-16 19:11:44,977 - core.test_engine - INFO - Test configured: mode=transmitter, size=100, rate=1, duration=30
+2025-10-16 19:11:45,001 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-16 19:12:14,978 - core.test_engine - INFO - Test duration exceeded: 30.0s >= 30s
+2025-10-16 19:12:14,979 - core.test_engine - INFO - Test completed. Duration: 30.00s
+2025-10-16 19:12:15,001 - core.database - INFO - Test session saved with ID: 21
+2025-10-16 19:12:15,001 - gui.main_window - INFO - Test results saved with session ID: 21
+2025-10-16 19:27:22,267 - core.serial_handler - ERROR - Unexpected error in receive loop: [Errno 5] Input/output error
+2025-10-16 19:29:32,843 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-16 19:29:32,855 - __main__ - INFO - Application closing normally
+2025-10-17 01:31:05,432 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 01:31:05,435 - core.database - INFO - Database initialized successfully
+2025-10-17 01:31:19,608 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 01:31:30,855 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-17 01:31:30,877 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-17 01:32:30,856 - core.test_engine - INFO - Test duration exceeded: 60.0s >= 60s
+2025-10-17 01:32:30,856 - core.test_engine - INFO - Test completed. Duration: 60.00s
+2025-10-17 01:32:30,882 - core.database - INFO - Test session saved with ID: 22
+2025-10-17 01:32:30,882 - gui.main_window - INFO - Test results saved with session ID: 22
+2025-10-17 01:33:09,565 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-17 01:33:09,586 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-17 01:33:14,375 - core.test_engine - INFO - Test completed. Duration: 4.81s
+2025-10-17 01:33:14,397 - core.database - INFO - Test session saved with ID: 23
+2025-10-17 01:33:14,397 - gui.main_window - INFO - Test results saved with session ID: 23
+2025-10-17 01:33:14,402 - core.test_engine - INFO - Test stopped
+2025-10-17 01:33:14,414 - core.database - INFO - Test session saved with ID: 24
+2025-10-17 01:33:14,414 - gui.main_window - INFO - Test results saved with session ID: 24
+2025-10-17 01:54:32,789 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 01:54:32,801 - __main__ - INFO - Application closing normally
+2025-10-17 01:54:39,862 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 01:54:39,865 - core.database - INFO - Database initialized successfully
+2025-10-17 01:54:53,824 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 01:55:02,584 - core.test_engine - INFO - Test configured: mode=transmitter, size=64, rate=10, duration=60
+2025-10-17 01:55:02,604 - core.test_engine - INFO - Test started in transmitter mode
+2025-10-17 01:56:02,585 - core.test_engine - INFO - Test duration exceeded: 60.0s >= 60s
+2025-10-17 01:56:02,586 - core.test_engine - INFO - Test completed. Duration: 60.00s
+2025-10-17 01:56:02,613 - core.database - INFO - Test session saved with ID: 25
+2025-10-17 01:56:02,613 - gui.main_window - INFO - Test results saved with session ID: 25
+2025-10-17 02:07:58,410 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 02:07:58,422 - __main__ - INFO - Application closing normally
+2025-10-17 02:08:03,308 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:08:03,311 - core.database - INFO - Database initialized successfully
+2025-10-17 02:08:12,691 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 02:08:27,139 - core.test_engine - INFO - Test configured: mode=receiver, size=64, rate=10, duration=60
+2025-10-17 02:08:27,158 - core.test_engine - INFO - Test started in receiver mode
+2025-10-17 02:09:17,479 - core.test_engine - INFO - Test completed. Duration: 50.34s
+2025-10-17 02:09:17,504 - core.database - INFO - Test session saved with ID: 26
+2025-10-17 02:09:17,505 - gui.main_window - INFO - Test results saved with session ID: 26
+2025-10-17 02:09:17,511 - core.test_engine - INFO - Test stopped
+2025-10-17 02:09:17,522 - core.database - INFO - Test session saved with ID: 27
+2025-10-17 02:09:17,523 - gui.main_window - INFO - Test results saved with session ID: 27
+2025-10-17 02:09:20,950 - core.test_engine - INFO - Test configured: mode=receiver, size=64, rate=10, duration=60
+2025-10-17 02:09:20,970 - core.test_engine - INFO - Test started in receiver mode
+2025-10-17 02:09:25,166 - core.test_engine - INFO - Test completed. Duration: 4.22s
+2025-10-17 02:09:25,180 - core.database - INFO - Test session saved with ID: 28
+2025-10-17 02:09:25,180 - gui.main_window - INFO - Test results saved with session ID: 28
+2025-10-17 02:09:25,185 - core.test_engine - INFO - Test stopped
+2025-10-17 02:09:25,196 - core.database - INFO - Test session saved with ID: 29
+2025-10-17 02:09:25,196 - gui.main_window - INFO - Test results saved with session ID: 29
+2025-10-17 02:17:43,696 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 02:17:43,698 - __main__ - INFO - Application closing normally
+2025-10-17 02:17:50,473 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:17:50,475 - core.database - INFO - Database initialized successfully
+2025-10-17 02:18:04,082 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 02:18:11,713 - core.test_engine - INFO - Test configured: mode=receiver, size=64, rate=10, duration=60
+2025-10-17 02:18:11,732 - core.test_engine - INFO - Test started in receiver mode
+2025-10-17 02:18:36,987 - core.test_engine - INFO - Test completed. Duration: 25.27s
+2025-10-17 02:18:37,009 - core.database - INFO - Test session saved with ID: 30
+2025-10-17 02:18:37,009 - gui.main_window - INFO - Test results saved with session ID: 30
+2025-10-17 02:18:37,014 - core.test_engine - INFO - Test stopped
+2025-10-17 02:18:37,028 - core.database - INFO - Test session saved with ID: 31
+2025-10-17 02:18:37,029 - gui.main_window - INFO - Test results saved with session ID: 31
+2025-10-17 02:18:52,944 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 02:18:52,956 - __main__ - INFO - Application closing normally
+2025-10-17 02:24:46,891 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:24:46,893 - core.database - INFO - Database initialized successfully
+2025-10-17 02:24:58,885 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 02:25:53,409 - utils.export - INFO - Data exported to CSV: /home/kage/Music/session_25_*.csv
+2025-10-17 02:27:16,960 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 02:27:16,971 - __main__ - INFO - Application closing normally
+2025-10-17 02:40:08,438 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:40:08,441 - core.database - INFO - Database initialized successfully
+2025-10-17 02:40:24,640 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 02:40:29,555 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 02:40:32,638 - __main__ - INFO - Application closing normally
+2025-10-17 02:40:38,192 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:40:38,195 - core.database - INFO - Database initialized successfully
+2025-10-17 02:40:41,658 - __main__ - INFO - Application closing normally
+2025-10-17 02:41:32,099 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:41:32,102 - core.database - INFO - Database initialized successfully
+2025-10-17 02:41:35,618 - __main__ - INFO - Application closing normally
+2025-10-17 02:46:53,041 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:46:53,043 - core.database - INFO - Database initialized successfully
+2025-10-17 02:47:01,652 - core.serial_handler - INFO - Connected to /dev/ttyUSB0 at 921600 baud
+2025-10-17 02:47:05,604 - core.serial_handler - INFO - Disconnected from serial port
+2025-10-17 02:47:07,556 - __main__ - INFO - Application closing normally
+2025-10-17 02:47:12,184 - __main__ - INFO - Starting Serial Communication Performance Tester
+2025-10-17 02:47:12,187 - core.database - INFO - Database initialized successfully
+2025-10-17 02:47:15,956 - __main__ - INFO - Application closing normally
